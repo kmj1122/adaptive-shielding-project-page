@@ -74,16 +74,16 @@
                 </a>
                 </span> -->
 
-                <!-- <span class="link-block">
-                  <a href="[LINK_TO_YOUR_SUPPLEMENTARY_PDF]" target="_blank"
+                <span class="link-block">
+                  <a href="static/pdf/AdaptiveShielding_Supplementary.pdf" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Supplementary</span>
+                  <span>Paper</span>
                 </a>
                 </span>
- -->
+
                 <span class="link-block">
                   <a href="https://github.com/safe-autonomy-lab/AdaptiveShieldingFE" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
@@ -126,7 +126,7 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Variations in hidden parameters, such as a robot’s mass distribution or friction, pose safety risks during execution. We develop a runtime shielding mechanism for reinforcement learning, building on the formalism of constrained hidden-parameter Markov decision processes. Function encoders enable real-time inference of hidden parameters from observations, allowing the shield and the underlying policy to adapt online. The shield constrains the action space by forecasting future safety risks (such as obstacle proximity) and accounts for uncertainty via conformal prediction. We prove that the proposed mechanism satisfies probabilistic safety guarantees and yields optimal policies among the set of safety-compliant policies. Experiments across diverse environments with varying hidden parameters show that our method significantly reduces safety violations and achieves strong out-of-distribution generalization, while incurring minimal runtime overhead.
+              Variations in hidden parameters, such as a robot's mass distribution or friction, pose safety risks during execution. We develop a runtime shielding mechanism for reinforcement learning, building on the formalism of constrained hidden-parameter Markov decision processes. Function encoders enable real-time inference of hidden parameters from observations, allowing the shield and the underlying policy to adapt online. The shield constrains the action space by forecasting future safety risks (such as obstacle proximity) and accounts for uncertainty via conformal prediction. We prove that the proposed mechanism satisfies probabilistic safety guarantees and yields optimal policies among the set of safety-compliant policies. Experiments across diverse environments with varying hidden parameters show that our method significantly reduces safety violations and achieves strong out-of-distribution generalization, while incurring minimal runtime overhead.
             </p>
           </div>
         </div>
@@ -143,13 +143,27 @@
                       </p>
                   </div>
                   <br>
-                  <h2 class="title is-3 has-text-centered">Our Approach: Adaptive Shielding with Provable Guarantees</h2>
+                  <h2 class="title is-3 has-text-centered">Our Approach: Adaptive Shielding with Safety Regularization</h2>
                   <div class="content">
                       <p>We propose a runtime shielding framework that adapts online to hidden parameters while offering provable probabilistic safety. The core components are:</p>
                       <ol>
                           <li><strong>Online Hidden-Parameter Adaptation:</strong> We leverage function encoders to efficiently infer hidden parameters from recent observations, enabling both the policy and the shield to adapt without retraining.</li>
-                          <li><strong>Safety-Regularized RL Objective (SRO):</strong> A novel objective function that balances reward maximization with safety by integrating a cost-sensitive value estimate, encouraging low-violation behavior during training.</li>
-                          <li><strong>Adaptive Shield with Conformal Prediction:</strong> A runtime shield that filters potentially unsafe actions proposed by the policy. It uses the inferred dynamics and conformal prediction to quantify uncertainty in future state forecasts, ensuring actions comply with safety margins.</li>
+                          <li><strong>Safety-Regularized RL Objective (SRO):</strong> A novel objective function that balances reward maximization with safety by integrating a cost-sensitive value estimate, encouraging low-violation behavior during training. Refer to Appendix G to see why this design choice is important.
+                            <div class="columns is-vcentered is-mobile is-centered" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                                <div class="column is-two-fifths">
+                                    <img src="static/images/Q_aug.png" alt="Q-augmented safety objective" style="width:100%; display:block; margin-left:auto; margin-right:auto; margin-bottom:0;">
+                                </div>
+                                <div class="column is-narrow has-text-centered">
+                                    <p style="margin: 0 0.5rem;"><em>where</em></p>
+                                </div>
+                                <div class="column is-two-fifths">
+                                    <img src="static/images/Q_safe.png" alt="Q-safe objective" style="width:100%; display:block; margin-left:auto; margin-right:auto; margin-bottom:0;">
+                                </div>
+                            </div>
+                         </li> 
+                          
+                            
+                          <li><strong>Adaptive Shield:</strong> A runtime shield that filters potentially unsafe actions proposed by the policy. It uses the inferred dynamics and conformal prediction to quantify uncertainty in future state forecasts, ensuring actions comply with safety margins.</li>
                       </ol>
                       <p>This combination allows for robust safety and performance even when the robot's dynamics change unexpectedly.</p>
                   </div>
@@ -157,16 +171,48 @@
           </div>
       </div>
   </section>
+
+  <section class="hero is-small" id="results"> <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Theoretical Results</h2>
+      <p class="has-text-centered">
+        <ol>
+            <li><strong>Proposition: Optimality Preservation:</strong> SRO effectively guides policy learning towards safe behaviors, while does not unnecessarily degrade performance when an agent already behaves safely.</li>
+            <li><strong>Theorem: Provable Safety and Performance:</strong> An optimal policy, when augmented with our adaptive shield, maximizes the expected cumulative discounted return while maintaining a tight bound on the average cost rate. This provides a formal guarantee that our framework not only achieves high performance in terms of task completion but also adheres to provable safety guarantees.</li>
+        </ol>
+    </p>
+      <br>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/Proposition.png" alt="Proposition on optimal policy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/Theorem1.png" alt="Theorem 1"/>
+        </div>
+
+        </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+
   <section class="hero is-small" id="results"> <div class="hero-body">
       <div class="container">
-        <h2 class="title is-3 has-text-centered">Key Results</h2>
+        <h2 class="title is-3 has-text-centered">Empirical Results</h2>
         <p class="has-text-centered">Our method demonstrates significant improvements in safety and generalization compared to established baselines across various Safe-Gym benchmarks.</p>
         <br>
         <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <img src="static/images/rq1_car.png" alt="Training curves for safety and return - Car robot"/>
             <h2 class="subtitle has-text-centered">
-              RQ1: Balancing Safety and Task Performance (Car Robot Example)
+              RQ1: Balancing Safety and Task Performance (Car Robot)
+            </h2>
+          </div>
+          <div class="item">
+            <img src="static/images/rq1_point.png" alt="Training curves for safety and return - Point robot"/>
+            <h2 class="subtitle has-text-centered">
+              RQ1: Balancing Safety and Task Performance (Point Robot)
             </h2>
           </div>
           <div class="item">
@@ -178,6 +224,9 @@
           </div>
         <div class="content has-text-centered" style="margin-top: 20px;">
             <h3 class="title is-4">RQ3: Execution-Time Efficiency</h3>
+            <div class="item">
+                <img src="static/images/Table.png" alt="The runtime speed of our method compared to the baselines"/>
+            </div>
             <p>Our approach introduces only modest runtime overhead compared to baselines, with the shield being triggered selectively. This makes it suitable for real-time deployment. (Refer to Table 1 in the paper for detailed metrics).</p>
             <p style="margin-top: 10px;">Further ablation studies and detailed results can be found in the main paper and appendix.</p>
         </div>
@@ -215,7 +264,7 @@
         <div class="column is-8">
           <div class="content">
             <p>
-              Contact: Minjae Kwon (hbt9su@virginia.edu) or Lu Feng (lf9u@virginia.edu)
+              Contact: Minjae Kwon (hbt9su@virginia.edu)
             </p>
             <p>
               This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the&nbsp;<a href="https://nerfies.github.io" target="_blank">Nerfies</a>&nbsp;project page.
