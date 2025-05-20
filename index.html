@@ -1,312 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Runtime Safety through Adaptive Shielding: From Hidden Parameter Inference to Provable Guarantees</title>
+    <meta name="description" content="Project page for research on adaptive shielding for runtime safety in reinforcement learning with hidden parameter inference and provable guarantees.">
+    <meta property="og:title" content="Runtime Safety through Adaptive Shielding">
+    <meta property="og:description" content="Ensuring safety for RL agents with unknown hidden parameters using adaptive shielding, function encoders, and conformal prediction.">
+    <meta property="og:image" content="static/images/flowchart2.png"> <meta property="og:url" content="https://your-username.github.io/adaptive-shielding-project-page/"> <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Runtime Safety through Adaptive Shielding">
+    <meta name="twitter:description" content="Ensuring safety for RL agents with unknown hidden parameters using adaptive shielding, function encoders, and conformal prediction.">
+    <meta name="twitter:image" content="static/images/flowchart2.png"> <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> <link rel="stylesheet" href="static/css/style.css"> 
 
-
-  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
-  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
-  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
-  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-  rel="stylesheet">
-
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
-</head>
+    </head>
 <body>
 
+    <header>
+        <h1>Runtime Safety through Adaptive Shielding: From Hidden Parameter Inference to Provable Guarantees</h1>
+        <p class="authors">
+            Minjae Kwon<sup>1</sup>, Tyler Ingebrand<sup>2</sup>, Ufuk Topcu<sup>2</sup>, Lu Feng<sup>1</sup>
+        </p>
+        <p class="affiliations">
+            <sup>1</sup>The University of Virginia &nbsp;&nbsp;&nbsp; <sup>2</sup>The University of Texas at Austin
+        </p>
+        <p class="venue">
+            Submitted to 39th Conference on Neural Information Processing Systems (NeurIPS 2025). Do not distribute.
+            </p>
+    </header>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+    <nav>
+        <a href="#abstract">Abstract</a> |
+        <a href="#approach">Approach</a> |
+        <a href="#results">Results</a> |
+        <a href="#paper">Paper</a> |
+        <a href="#code">Code</a> |
+        <a href="#citation">Cite</a>
+        </nav>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+    <main>
+        <section id="teaser">
+            <h2>Overview</h2>
+            <p>Ensuring robots operate safely despite unknown variations in their physical properties (like mass or friction) is a major challenge. Our work introduces a runtime shielding mechanism that allows reinforcement learning agents to adapt to these hidden parameters in real-time while maintaining provable safety guarantees.</p>
+            <img src="static/images/flowchart2.png" alt="Flowchart of our Adaptive Shielding Approach" style="width:80%; max-width:700px; display:block; margin:auto;">
+            <p style="text-align:center; font-style:italic;">Our adaptive shielding framework integrates real-time hidden parameter inference with uncertainty-aware action filtering.</p>
+        </section>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
+        <section id="abstract">
+            <h2>Abstract</h2>
+            <p>Variations in hidden parameters, such as a robot’s mass distribution or friction, pose safety risks during execution. We develop a runtime shielding mechanism for reinforcement learning, building on the formalism of constrained hidden-parameter Markov decision processes. Function encoders enable real-time inference of hidden parameters from observations, allowing the shield and the underlying policy to adapt online. The shield constrains the action space by forecasting future safety risks (such as obstacle proximity) and accounts for uncertainty via conformal prediction. We prove that the proposed mechanism satisfies probabilistic safety guarantees and yields optimal policies among the set of safety-compliant policies. Experiments across diverse environments with varying hidden parameters show that our method significantly reduces safety violations and achieves strong out-of-distribution generalization, while incurring minimal runtime overhead.</p>
+        </section>
 
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+        <section id="problem">
+            <h2>The Challenge: Safety with Unknown Dynamics</h2>
+            <p>Robots and autonomous systems in open-world environments often encounter varying underlying dynamics due to unobserved hidden parameters (mass, friction, terrain). These variations pose significant safety risks and challenge the generalization of reinforcement learning (RL) systems. Current methods often trade off adaptability for safety, or vice-versa, especially when dynamics change online.</p>
+            </section>
 
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+        <section id="approach">
+            <h2>Our Approach: Adaptive Shielding with Provable Guarantees</h2>
+            <p>We propose a runtime shielding framework that adapts online to hidden parameters while offering provable probabilistic safety. The core components are:</p>
+            <ol>
+                <li><strong>Online Hidden-Parameter Adaptation:</strong> We leverage function encoders to efficiently infer hidden parameters from recent observations, enabling both the policy and the shield to adapt without retraining.</li>
+                <li><strong>Safety-Regularized RL Objective (SRO):</strong> A novel objective function that balances reward maximization with safety by integrating a cost-sensitive value estimate, encouraging low-violation behavior during training.</li>
+                <li><strong>Adaptive Shield with Conformal Prediction:</strong> A runtime shield that filters potentially unsafe actions proposed by the policy. It uses the inferred dynamics and conformal prediction to quantify uncertainty in future state forecasts, ensuring actions comply with safety margins.</li>
+            </ol>
+            <p>This combination allows for robust safety and performance even when the robot's dynamics change unexpectedly.</p>
+            </section>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+        <section id="results">
+            <h2>Key Results</h2>
+            <p>Our method demonstrates significant improvements in safety and generalization compared to established baselines across various Safe-Gym benchmarks.</p>
+            
+            <div>
+                <h3>RQ1: Balancing Safety and Task Performance</h3>
+                <p>Our approach (SRO + Shield) consistently achieves lower safety violation rates during training while maintaining competitive task returns. (Example shown for the Car robot).</p>
+                <img src="static/images/rq1_car.png" alt="Training curves for safety and return - Car robot" style="width:70%; max-width:600px;">
+                </div>
+
+            <div style="margin-top: 20px;">
+                <h3>RQ2: Generalization to Out-of-Distribution Environments</h3>
+                <p>The full method demonstrates strong generalization to unseen hidden parameters and environmental changes, maintaining a favorable balance between safety and performance.</p>
+                <img src="static/images/rq2_level2.png" alt="OOD Generalization: Return vs. Cost Rate" style="width:70%; max-width:600px;">
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
+            <div style="margin-top: 20px;">
+                <h3>RQ3: Execution-Time Efficiency</h3>
+                <p>Our approach introduces only modest runtime overhead compared to baselines, with the shield being triggered selectively. This makes it suitable for real-time deployment. (Refer to Table 1 in the paper for detailed metrics).</p>
+            </div>
+            
+            <p style="margin-top: 20px;">Further ablation studies and detailed results can be found in the main paper and appendix.</p>
+        </section>
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+        <section id="paper">
+            <h2>Paper & Resources</h2>
+            <ul>
+                <li><strong>Paper PDF:</strong> <a href="[LINK_TO_YOUR_PAPER_PDF_ON_ARXIV_OR_ELSEWHERE]">Download Paper (PDF)</a></li>
+                <li><strong>Supplementary Material:</strong> <a href="[LINK_TO_YOUR_SUPPLEMENTARY_PDF]">Download Supplementary (PDF)</a></li>
+                </ul>
+        </section>
         
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
+        <section id="code">
+            <h2>Code</h2>
+            <p>
+                The code for this project is available at our OSF repository (anonymized for review): 
+                <a href="https://osf.io/ez2x9/files/8fceb286-9547-4503-8399-0408ea018822?view_only=dd56bf2c4bf843ab968a3cb2a7ae903b" target="_blank" rel="noopener noreferrer">OSF Anonymous Link</a>
+                </p>
+        </section>
 
+        <section id="citation">
+            <h2>Citation</h2>
+            <p>If you find our work useful, please consider citing:</p>
+            <pre style="background-color: #f0f0f0; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word;">
+@article{KwonYourYearASHIELD, title   = {Runtime Safety through Adaptive Shielding: From Hidden Parameter Inference to Provable Guarantees},
+    author  = {Minjae Kwon and Tyler Ingebrand and Ufuk Topcu and Lu Feng},
+    journal = {arXiv preprint arXiv:XXXX.XXXXX}, year    = {2025} % TODO: Add conference details if/when accepted, e.g., booktitle, publisher, pages etc.
+}
+            </pre>
+        </section>
+        
+        </main>
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
+    <footer>
+        <p>
+            Contact: Minjae Kwon (hbt9su@virginia.edu) or Lu Feng (lf9u@virginia.edu)
+            <br>
+            Project page template by <a href="https://horwitz.ai" target="_blank" rel="noopener noreferrer">Eliahu Horwitz</a>. Last updated: May 16, 2025.
+        </p>
+    </footer>
 
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+</body>
+</html>
